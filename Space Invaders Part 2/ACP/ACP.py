@@ -64,7 +64,9 @@ while running:
     sprite1.move(x_change, y_change)
 
     if sprite1.rect.colliderect(sprite2.rect):
-        
+        pointsound = mixer.Sound("point.mp3")
+        pointsound.play()
+        pointsound.set_volume(0.4)
         score_value += 1
         allsprite.remove(sprite2)
         sprite2 = spawn_new_box()
